@@ -9,7 +9,7 @@ import { Widgets } from './Widgets'
 function App() {
 
   return (
-    <div className='w-full h-screen bg-black  flex'>
+    <div className='w-full h-screen bg-black text-white flex'>
       <Sidebar></Sidebar> 
       <Feed></Feed>
       <Widgets> </Widgets>

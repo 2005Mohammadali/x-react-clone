@@ -4,7 +4,7 @@ import { Button } from "./Button"
 
 export function Sidebar(){
     return(
-        <div className="w-64 h-screen bg-gray-500 flex-2 ml-8">
+        <div className="w-64 h-screen bg-black flex-2 ml-8 ">
             <BrowserRouter>
                 <nav className="flex flex-col gap-2 text-xl p-4">
                     <h1 className="text-4xl px-4 cursor-pointer">X</h1>
