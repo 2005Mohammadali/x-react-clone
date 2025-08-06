@@ -8,7 +8,7 @@
       theme: {
         extend: {
           colors: {
-            'custom-blue': '#1a73e8',
+            'blue': 'rgb(29, 155, 240)',
           },
         },
       },
