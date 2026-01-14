@@ -1,16 +1,16 @@
 import {Icons} from"./Icons.jsx";
 
-export function Post({children}) {
+export function Post({avatarImg, name, username, caption, media}) {
     return(
-        <div className="flex gap-3 bg-transparent w-full h-180 p-4 border-t border-gray-700 hover:bg-[#40444d20] cursor-pointer">
+        <div className="flex gap-3 bg-transparent w-full h-auto p-4 border-x border-t border-gray-700 hover:bg-[#40444d20] cursor-pointer">
             <div className="">
-                <img className="h-10 w-18 rounded-full object-cover" src="https://images.unsplash.com/photo-1767111389663-bbbe59f7413f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8" alt="John Doe" />
+                <img className="h-10 w-18 rounded-full object-cover" src={avatarImg} alt="John Doe" />
             </div>
             <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                        <p className="text-base font-bold hover:underline">John Doe</p>
-                        <p className="text-sm text-gray-500">@johndoe</p>
+                        <p className="text-base font-bold hover:underline">{name}</p>
+                        <p className="text-sm text-gray-500">{username}</p>
                         <p className="text-sm text-gray-500">-17h</p>
                     </div>
                     <div className="flex items-center jutify-center">
@@ -27,10 +27,10 @@ export function Post({children}) {
                     </div>
                 </div>
                 <div className="text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ratione!
+                    {caption}
                 </div>
                 <div className="object-cover rounded-lg border border-gray-700">
-                    <img src="https://images.unsplash.com/photo-1766898211697-158d058acfe9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D" alt="" srcset="" />
+                    <img src={media} alt="" srcset="" />
                 </div>
                 <div className="flex items-center justify-between text-gray-500">
                     <Icons iconStyle={"hover:bg-[#3db7f61f]"} valueStyle={"hover:text-[#3cb8f9]"} value={"112"}>
