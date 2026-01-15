@@ -1,10 +1,10 @@
 import {Icons} from"./Icons.jsx";
 
-export function Post({avatarImg, name, username, caption, media}) {
+export function Post({avatarImg, name, username, caption, media, mediaType}) {
     return(
         <div className="flex gap-3 bg-transparent w-full h-auto p-4 border-x border-t border-gray-700 hover:bg-[#40444d20] cursor-pointer">
-            <div className="">
-                <img className="h-10 w-18 rounded-full object-cover" src={avatarImg} alt="John Doe" />
+            <div className="size-11 flex-shrink-0">
+                <img className="h-11 w-27 rounded-full object-cover object-top" src={avatarImg} alt="John Doe" />
             </div>
             <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
@@ -29,9 +29,16 @@ export function Post({avatarImg, name, username, caption, media}) {
                 <div className="text-base">
                     {caption}
                 </div>
-                <div className="object-cover rounded-lg border border-gray-700">
-                    <img src={media} alt="" srcset="" />
+                {media && mediaType === "video" && (
+                <div className="w-fit object-cover rounded-xl overflow-hidden border border-gray-700">
+                    <video controls><source src={media} type="video/mp4" /></video>
                 </div>
+                )}
+                {media && mediaType === "image" && (
+                <div className="w-fit object-cover rounded-xl overflow-hidden border border-gray-700">
+                    <img src={media} alt="" srcSet="" />
+                </div>
+                )}
                 <div className="flex items-center justify-between text-gray-500">
                     <Icons iconStyle={"hover:bg-[#3db7f61f]"} valueStyle={"hover:text-[#3cb8f9]"} value={"112"}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
